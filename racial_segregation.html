@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap.css">
+  <script src="d3.v5.js" charset="utf-8"></script>
+  <script type="text/javascript" src="racial_segregation.js"></script>
+  <title>Ratial Segregation</title>
+</head>
+
+<body>
+
+  <h1 id="title">Racial Segregation</h1>
+
+  <div id="content">
+
+    <div id="controls">
+      <form>
+        <fieldset>
+          <legend style="text-align: center; font-size: 28px;">Controls</legend>
+          <fieldset class="form-group">
+            <div id="labels">
+              <label>Empty Places</label>
+              <label id="empty_spaces_demo">50 %</label>
+            </div>
+            <input type="range" min="1" max="100" value="50" class="custom-range" id="empty_places_slider">
+          </fieldset>
+          <fieldset class="form-group">
+            <div id="labels">
+              <label>Blue/Red Ratio</label>
+              <label id="blue_red_ratio_demo">50 %</label>
+            </div>
+            <input type="range" min="1" max="100" value="50" class="custom-range" id="blue_red_ratio_slider">
+          </fieldset>
+          <fieldset class="form-group">
+            <div id="labels">
+              <label>Board Size</label>
+              <label id="board_size_demo">50</label>
+            </div>
+            <input type="range" min="1" max="200" value="50" class="custom-range" id="board_size_slider">
+          </fieldset>
+          <fieldset class="form-group">
+            <div id="labels">
+              <label>Time Between Iteration (ms)</label>
+              <label id="iter_time_demo">50</label>
+            </div>
+            <input type="range" min="20" max="5000" value="50" class="custom-range" id="iter_time_slider">
+          </fieldset>
+          <fieldset class="form-group">
+            <div id="labels">
+              <label>Surrounding Equals</label>
+              <label id="surrounding_equals_demo">50 %</label>
+            </div>
+            <input type="range" min="1" max="100" value="50" class="custom-range" id="surrounding_equals_slider">
+          </fieldset>
+          <button type="button" onclick="applyControls();" class="btn btn-primary">Apply</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div id="board_container"></div>
+
+    <div id="output">
+      <legend id="out_header">Output Information</legend>
+      <div id="out_container">
+        <div id="iteration" class="out_body">
+          <h4>Iteration</h4>
+          <h3 id="iteration_demo">0</h3>
+        </div>
+        <div id="happy_people" class="out_body">
+          <h4>Happy People</h4>
+          <h3 id="happy_people_demo">83%</h3>
+          <div id="progress_bar" class="progress">
+              <div id="happy_people_progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+          </div>
+        </div>
+        <div id="segregation" class="out_body">
+          <h4>Segregation</h4>
+          <h3 id="segregation_demo">0%</h3>
+          <div id="progress_bar" class="progress">
+            <div id="segregation_progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button type="button" id="trybtn" onclick="main();" class="btn btn-primary btn-lg btn-block">TRY IT</button>
+  <!-- <button type="button" class="btn btn-outline-success">Success</button> -->
+
+  <h2 id="htable">Table of Happiness</h2>
+
+  <table id="table" class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Iteration</th>
+        <th scope="col">Happy People</th>
+        <th scope="col">Segregation</th>
+      </tr>
+    </thead>
+  </table>
+
+  <script>
+    initBoard();
+    initControls();
+  </script>
+
+</body>
+
+</html>

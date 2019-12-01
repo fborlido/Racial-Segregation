@@ -1,0 +1,98 @@
+#title {
+    margin: 20px 0px;
+    text-align: center;
+}
+
+#content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#controls {
+    width: 30%;
+    /* background-color: chocolate; */
+}
+
+#labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+#board_container {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#board {
+    width: 63vh;
+    height: 63vh;
+    /* background-color: rgb(49, 150, 35); */
+}
+
+.board_row {
+    position: relative;
+    width: 100%;
+}
+
+.board_column {
+    background-color: white;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+#output {
+    width: 30%;
+    align-self: stretch;
+}
+
+#out_container {
+    display: flex;
+    margin: 0px 30px;
+    height: 70%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#out_header {
+    text-align: center;
+    font-size: 28px;
+}
+
+.out_body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.out_body h4 {
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+.out_body h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+#progress_bar {
+    width: 100%;
+}
+
+#trybtn {
+    width: 90%;
+    margin: 40px auto;
+}
+
+#table {
+    width: 80%;
+    margin: auto;
+}
+
+#htable {
+    text-align: center;
+    margin: 20px 0px;
+}
+
